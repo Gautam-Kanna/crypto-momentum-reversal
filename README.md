@@ -13,7 +13,7 @@ I wanted to see whether momentum and reversal patterns in crypto prices are stil
 - Statistics on daily returns (4h returns compounded), Sharpe annualized with √252, max drawdown from the growth-of-$1 curve, and alpha / beta / alpha t-stat from a regression on BTC
 
 ## What I found
-- **Horizon:** reversal only at the 4-hour look-back. From 8 hours to 30 days it's momentum (Sharpe up to about 1.7 before costs).
+- **Horizon:** reversal only at the 4-hour look-back. From 8 hours to 30 days it's momentum (Sharpe up to about 1.7 before costs, about 2.2 when the latest bar is skipped).
 - **Volume:** reversal is concentrated in low-volume coins (Sharpe 1.70 vs -0.51 for high-volume coins), which fits the uninformed-trading story. It turns over too much to survive 20 bps, so I kept it as a research finding rather than forcing it into the portfolio.
 - **Seasonality:** same-time-of-day momentum was the strongest signal before costs (Sharpe 2.94), but it has to rebuild the whole portfolio every bar.
 - **Costs decide everything:** at 20 bps none of the reversal or seasonality versions made money. A slow multi-horizon momentum strategy (ranks averaged over 3/7/14/30 days, 8-day smoothing) did.
@@ -29,7 +29,7 @@ I wanted to see whether momentum and reversal patterns in crypto prices are stil
 | Beta to BTC | -0.02 | -0.02 | 1.00 |
 | Alpha t-stat | 0.82 | 1.13 | - |
 
-The out-of-sample Sharpe (0.41) was in line with training (0.36), the strategy was positive in 4 of 5 years, and it's market-neutral (correlation with BTC -0.08). The alpha is **not** statistically significant, though (t-stat 0.82 out of sample, 1.08 over 2021-2025). Five years isn't enough data to separate a 0.4 Sharpe from luck.
+The out-of-sample Sharpe (0.41) was in line with training (0.36), the strategy was positive in 4 of 5 years, and it's market-neutral (correlation with BTC -0.08). The alpha is **not** statistically significant, though (t-stat 0.82 out of sample). Five years isn't enough data to separate a 0.4 Sharpe from luck.
 
 The 7 bps column assumes limit orders always fill at the quoted price, which ignores missed fills and adverse selection, so I treat it as a sensitivity test only.
 
